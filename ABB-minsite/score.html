@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="viewport" content="width=640,user-scalable=no,target-densitydpi=device-dpi"/>
+<meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<meta HTTP-EQUIV="Expires" CONTENT="-1">
+<title>2016 ABB电力世界</title>
+<meta http-equiv="Cache-Control" content="max-age=86400 public"/>
+<meta  WXKey="uwin" WXDesc="领先技术 — 智能解决方案，了解更多信息，请点击查看" WXTitle="2016 ABB电力世界"  WXImg="http://client.adtmr.com/client/20161022/img/abb-sha.jpg" WXLink="http://client.adtmr.com/client/20161022/index.html" id="wx_share">
+<link rel="stylesheet" href="css/basic.css">
+</head>
+<body class="body-bg">
+	<div class="wrap">
+		<div id="header" style="background:#ffffff">
+			<a href="javascript:void(0)" class="backBtn"></a>
+			<h2><i class="pos7"></i>互动游戏</h2>
+			<a href="index.html" class="goIndex"></a>
+		</div>
+		<div class="score-w">
+			<div class="score-all">
+				<i class="pos2"></i>
+				<h3></h3>
+				<span></span>
+				<a href="game.html">确认</a>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="http://front.01event.com/cdn/js/jquery.min.js"></script>
+	<script src="http://front.01event.com/cdn/js/jweixinShare.js"></script>
+	<script>
+		$(function(){
+
+				
+			$(".backBtn").click(function() {
+				history.go(-1);
+			});
+			var openid = localStorage.getItem('openid');
+			if(!openid){
+				location.href = 'index.html';
+			}
+
+			function getQueryString(name) {
+			    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+			    var r = window.location.search.substr(1).match(reg);
+			    if (r != null) return unescape(r[2]); return null;
+			}
+
+			var code = getQueryString('code');
+
+			$.ajax({
+			    	url: "http://abb2016.adtmr.com/abbfans/addscore",
+			    	type:"post",
+			    	data:{
+			    		'user': openid,
+			    		'code':code
+			    	},
+			    	dataType:"jsonp",
+			    	success: function(data){
+
+			    		console.log(data);
+
+			    		if(data.state=='0'){
+			    			setScore(data.data);
+			    		}else if(data.state=='10001'){
+			    			if(data.key=="103"){
+			    				getRepeat();
+			    			}
+			    			if(data.key=='102'){
+			    				noScore();
+			    			}
+			    			if(data.key=='101'){
+			    				optionsNull()
+			    			}
+			    		}
+			    	},
+			    	error : function(){
+			    		scoreError();
+			    	}
+				});
+
+
+				function scoreError(){
+					var scoHtml = '系统繁忙，请稍后再试！';
+					$(".score-all h3").html(scoHtml);
+					$(".score-all i").attr("class","pos3");
+				};	
+
+				function setScore(data){
+					$(".score-all span").html(data.name);
+					var scoHtml = '';
+					scoHtml+='恭喜您获得<em>'+data.score+'</em>积分';
+					$(".score-all h3").html(scoHtml);
+				};
+
+
+				function getRepeat(){
+					var scoHtml = '';
+					scoHtml+='不可重复领取';
+					$(".score-all h3").html(scoHtml);
+					$(".score-all span").empty();
+					$(".score-all i").attr("class","pos3");
+				}
+
+
+				function noScore(data){
+
+					var scoHtml = '';
+					scoHtml+='未找对应的加点';
+					$(".score-all h3").html(scoHtml);
+					$(".score-all span").empty();
+					$(".score-all i").attr("class","pos3");
+				}
+
+				function optionsNull(){
+					var scoHtml = '';
+					scoHtml+='参数为空';
+					$(".score-all h3").html(scoHtml);
+					$(".score-all span").empty();
+					$(".score-all i").attr("class","pos3");
+				}
+		})
+	</script>
+</body>
+</html>

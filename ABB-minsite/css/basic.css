@@ -1,0 +1,355 @@
+@charset "utf-8";
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0}
+html{color:#333333; overflow:-moz-scrollbars-vertical ; font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-webkit-text-size-adjust:none}
+body,button,input,select,textarea{font: 14px/1.667 "Microsoft Yahei", "Helvetica Neue","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;}
+h1,h2,h3,h4,h5,h6{font-size:100%; font-weight:normal;}
+em, i{font-style:normal}
+ul,ol{list-style:none}
+a{text-decoration:none; outline:none; color:#333333; -webkit-tap-highlight-color:rgba(255,255,255,0);}
+a:hover{text-decoration:none;}
+legend{color:#000}
+fieldset,img{border:0}
+button,input,select,textarea{font-size:100%; border:none 0; outline:none; -webkit-appearance: none;}
+table{border-collapse:collapse;border-spacing:0;}
+th, td{text-align: left;}
+img{-ms-interpolation-mode:bicubic; vertical-align:top; border:0}
+textarea{resize:vertical; resize:none;}
+input:focus,textarea:focus{ outline:none;}
+input:-moz-placeholder , textarea:-moz-placeholder , select:-moz-placeholder{ color:#666666;}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder , select:-ms-input-placeholder{ color:#666666;}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder , select::-webkit-input-placeholder{ color:#666666;font-size: 24px;}
+.clearfix:after{content:"";display:block;clear:both}.clearfix{zoom:1}
+
+.fl{float: left; display: inline;}
+.fr{float: right; display: inline;}
+
+/*公共部分*/
+body *{max-height: 999999px;}
+.pub_pic img{width: 100%;}
+.wrap{width: 640px;margin: 0 auto;}
+.abb-container{width: 580px;margin: 0 auto;}
+#header{height: 76px;line-height: 76px;font-size: 24px;color: #191919;position: relative;background-color: #ffffff}
+#header .backBtn{display:inline-block;position: absolute;left:0; top:0;width: 80px;height: 100%;background: url(../img/abb-icon.png) 40px -76px no-repeat;}
+#header .goIndex{display:inline-block;position: absolute;right:0; top:0;width: 100px;height: 100%;background: url(../img/abb-icon.png) -32px -76px no-repeat;}
+#header h2{text-align: center;line-height: 76px;}
+#header h2 i{width: 42px;height: 50px;background: url(../img/abb-icon.png) no-repeat;display: inline-block;vertical-align: middle;}
+#header .pos1{background-position: 8px -192px;}
+#header .pos2{background-position: -42px -192px;}
+#header .pos3{background-position: -98px -190px;}
+#header .pos4{background-position: -142px -192px;}
+#header .pos5{background-position: -192px -192px;}
+#header .pos6{background-position: -246px -196px;}
+#header .pos7{background-position: -290px -196px;}
+#header .pos8{background-position: -342px -192px;}
+#header .pos9{background-position: -395px -194px;}
+.text-content{width: 580px;margin: 0 auto;padding-top: 20px;}
+.text-content p{color: #666464;font-size: 24px;line-height: 42px;padding-bottom: 56px;}
+/*首页部分*/
+.index-body{background-color: #000000}
+.index-bg{background-color: #000000}
+.index-banner img{display: block;width: 100%}
+.index-list{background:url(../img/index-list.jpg) 0 -1px no-repeat;margin-top: -1px;}
+
+.index-list ul li{float: left;display: inline;width:33.33%;}
+.index-list ul li a{display: block;padding: 46px 0;}
+.index-list ul li i{width: 50px;height: 50px;margin:0 auto;background: url(../img/abb-i-icon.png) no-repeat;display: block;}
+.index-list p{font-size: 21px;color: #333333;text-align: center;}
+.index-list .pos1{background-position: 8px 0px;}
+.index-list .pos2{background-position: -42px 0px;}
+.index-list .pos3{background-position: -98px 0px;}
+.index-list .pos4{background-position: -142px 0px;}
+.index-list .pos5{background-position: -192px 0px;}
+.index-list .pos6{background-position: -246px 0px;}
+.index-list .pos7{background-position: -291px 0px;}
+.index-list .pos8{background-position: -342px 0px;}
+.index-list .pos9{background-position: -395px 0px;}
+
+/*会议介绍部分*/
+
+.intro-banner{border-top: 2px solid #ff994f;position: relative;}
+.intro-banner .text{width: 88%;height: 96px;line-height: 96px;padding: 0 6%;background-color: rgba(0,0,0,0.7);position: absolute;left: 0;bottom: 0;font-size: 32px;color: #ffffff;}
+
+/*日程安排*/
+body.data-bg{background: #000000 url(../img/date-bg.png) 0 0 no-repeat;background-size: cover;}
+.date-time{position:relative;padding-bottom: 10px; border-top: 2px solid #ff994f;}
+.date-all{width: 580px;margin: 0 auto;background: url(../img/date-all.png) 50px 30px no-repeat;height: 832px;position: absolute;left: 30px;top: 38px;z-index: 2}
+.date-part{width: 580px;margin: 26px auto;border-radius: 4px;background: #ffffff;position: relative;}
+.date-part h2{font-size: 24px;line-height: 52px;color: #ff6c00;}
+.date-part p{font-size: 24px;color: #333333;line-height: 34px;}
+.date-part p span{text-align: left;float:right;width: 170px;padding: 0 10px;}
+.date-part p.top{margin-top: 30px;color: #666666;}
+
+.date-part .line{width: 1px; position:absolute;left: 153px;top: 60px;bottom: 40px;background: #333333;display: inline-block;z-index: 1111;}
+
+.data-part-css{padding: 36px 0 0px 152px;}
+.date-part .part1,.date-part .part3{background:#ffffff; position:relative;}
+.date-part .part1 i{display: inline-block;width: 92px;height: 96px;background:url(../img/abb-icon.png) 0px -408px no-repeat;position: absolute;left: 44px;top: 34px;}
+
+.date-part .part2{background:#f3f3f3;position: relative; }
+.date-part .part2 i{display: inline-block;width: 92px;height: 96px;background:url(../img/abb-icon.png) -100px -408px no-repeat;position: absolute;left: 44px;top: 34px;}
+
+.date-part .part3 i{display: inline-block;width: 92px;height: 96px;background:url(../img/abb-icon.png) -200px -408px no-repeat;position: absolute;left: 44px;top: 34px;}
+
+.part-text{padding: 0 24px 34px 20px;position: relative;}
+.part-text:after{content:'';width: 10px;height: 10px;border-radius: 50%;border: 1px solid #000000;background: #ffffff;position: absolute;left:-5px; top: 18px;z-index: 1112;}
+
+/*主题论坛*/
+body.theme-bg{background: #000000 url(../img/theme-bg.png) 0 0 no-repeat;background-size: cover;}
+.theme{position:relative;border-top: 2px solid #ff994f;padding-bottom: 30px;}
+.theme p{font-size: 24px;color: #333333;min-width: 200px}
+.theme-part{width: 580px;margin: 26px auto;border-radius: 4px;}
+.theme-forum{width: 580px;margin: 26px auto;border-radius: 4px;background: #ffffff;}
+.theme-forum h2{font-size: 24px;color: #f3f3f3;background-color: #ff6c00;padding: 20px 120px 24px 32px;line-height: 38px;position: relative;}
+.theme-forum h2 i{width: 72px;height: 72px;display: inline-block;background: url(../img/abb-icon.png) 0px -300px no-repeat;position: absolute;right: 30px;top: 24px;}
+.theme-forum .p-text{padding: 20px 20px 26px 32px;}
+.theme-forum .p-text p{border: 0px solid red;font-size: 24px;color: #333333;background-color: #ffffff;line-height: 40px;}
+.theme-forum .p-text p span{font-size: 20px;color: #999999;}
+.theme-forum span.last{display: block;background: #f3f3f3;font-size: 20px;color: #666666;padding: 20px 32px 24px 32px;}
+
+.theme-time{width: 580px;margin: 60px auto 0px;border-radius: 4px;position: relative;background: #ffffff;position: relative;}
+.theme-time .line{width: 1px; position:absolute;left: 220px;top: 60px;bottom: 28px;background: #333333;display: inline-block;z-index: 1111;}
+.theme-part-text{padding: 0 10px 0 0;position: relative;}
+.theme-part-text:after{content:'';width: 10px;height: 10px;border-radius: 50%;border: 1px solid #000000;background: #ffffff;position: absolute;left:-32px; top: 14px;z-index: 1112;}
+.theme-time .time{width:220px ;height: 40px;background: #ff6c00;position: absolute;left: 34px;top: -20px;text-align: center;line-height: 40px;font-size: 20px;color: #ffffff;}
+.theme-time ul{width: 508px;margin: 0 auto;padding-top: 40px;padding-bottom: 8px;}
+.theme-time ul li {margin-bottom: 12px;}
+.theme-time ul li p{width: 210px}
+.theme-time ul li span{display: block;font-size: 20px;color: #999999;padding-bottom: 8px; line-height: 22px;}
+.theme-time ul li span.end{padding-bottom: 0px;}
+
+
+/*技术讲座*/
+
+.tech-list{margin: 0 auto;border-top: 2px solid #ff994f;background: #ffffff;padding-top: 30px;padding-bottom: 30px;}
+.tech-list ul{width: 590px;padding: 0 25px;}
+.tech-list ul li{margin-bottom: 20px;}
+.tech-list ul li a{display: block;}
+.tech-list ul li a img{display: block;width: 100%;}
+
+/*样本下载*/
+.download-bg:before{content:'';position: fixed;z-index:-1;top: 0;left: 0;bottom: 0;right: 0;/*background: url(../img/theme-bg.png) 0 0 no-repeat;*/background-size: cover;background: #ffffff}
+.download{border-top: 2px solid #cfcfcd;color: #ffffff;padding-bottom: 20px;background-attachment: fixed;}
+.download ul{padding-top: 40px;}
+.download ul li{margin-bottom: 40px;}
+.download ul li dl{display: none;background-color: #ffffff;}
+.download ul dl dd{border-bottom: 1px solid #ccc;}
+.download ul dl dd:nth-of-type(even){background: #f3f3f3;}
+.download a.out{height: 80px;background: #cfcfcd;line-height: 80px;border-bottom: 4px solid #ffffff;font-size: 24px;padding:0 20px;display: block;color: #42475f;position: relative;}
+.download a.out::after{content:'';width: 60px;height: 80px;position: absolute;right: 0;top: 0;background: url(../img/abb-icon.png) -166px -270px;}
+.download a.out.active::after{content:'';width: 60px;height: 80px;position: absolute;right: 0;top: 0;background: url(../img/abb-icon.png) -100px -270px;}
+.download a.out.active{border: none;}
+.download a.in{font-size: 24px;padding:0 20px 20px;display: block;color: #42475f;position: relative;}
+.download a.in p{font-size: 22px;line-height: 30px;padding:14px 40px 0px 100px;color: #42475f;min-height: 70px}
+a.in p:after{content: '';position: absolute;right: 0;top: 32px;width: 100px;height: 100px;background: url(../img/abb-icon.png) -330px -280px no-repeat;}
+a.in span{color: #919da9;font-size: 16px;display: block;line-height: 18px;padding: 0px 40px 6px 100px;}
+a.in span i{padding:0px 50px 0px 0px;color: #919da9;font-size: 16px;display: block;line-height: 18px;}
+a.in:after{content:'';width: 76px;height: 76px;display: block;position: absolute;left: 20px;top: 24px;background: url(../img/abb-icon.png) -248px -78px;}
+a.in em{position: absolute;left: 32px;top: 100px;font-size: 16px;color: #919da9;width: 50px;height: 20px;text-align: center;}
+
+/*问卷调查*/
+.question{padding: 30px 30px;border-top: 2px solid #ff994f;background: url(../img/theme-bg.png) 0 0 no-repeat;color: #ffffff;background-size: cover;padding-bottom: 30px;}
+.question ul li {background: #ffffff;position: relative;display: none;}
+
+.question-sha{position: fixed;left: 0;top: 0;width: 100%;height: 100%;background: rgba(0,0,0,.9);overflow-y: scroll;z-index: 11112;}
+.question-sha .close-q-Btn{position: absolute;right: 0;top: 0;width: 60px;height: 60px;background: url(../img/abb-icon.png) -340px -390px;}
+.question-sha .text-q-warp{width: 90%;padding: 170px 5% 40px 5%;}
+.question-sha h1{font-size: 36px;color: #ffffff;padding: 10px;text-align: center;margin-top: 20%;}
+.question-sha h2.fir{font-size: 30px;color: #ffffff;padding: 10px 30px;margin-top: 20%;width: 500px;margin: 0 auto;text-indent: 2em;}
+.question-sha a.que-back-Btn{width: 280px;height: 84px;display: block;line-height: 84px;text-align: center;color: #ffffff;font-size: 30px;background-color: #ff6c00;margin: 260px auto 0;}
+.question-sha a.que-sure-Btn{width: 280px;height: 84px;display: block;line-height: 84px;text-align: center;color: #ffffff;font-size: 30px;background-color: #ff6c00;margin: 260px auto 0;}
+.ques-w{border-top: 1px solid #ff6c00;}
+.question-alert-sha{display: none;position: fixed;left: 0;top: 0;width: 100%;height: 100%;background: rgba(0,0,0,.8);overflow-y: scroll;z-index: 11112;}
+.ques-alert{width: 488px;height: 500px;border-top: 2px solid #ff6c00;background: url(../img/score-bg.png) 0 -2px no-repeat;position: fixed;left: 50%;top: 50%;margin-left: -244px;margin-top: -250px;}
+.ques-alert h3{font-size: 30px;color: #333333;text-align: center;padding: 20px 20px 0px;margin-top: 130px;}
+.ques-alert a{display: block;font-size: 24px;color: #ff6c00;width: 240px;height: 70px;border: 1px solid #cfcfcf;margin: 80px auto 20px;text-align: center;line-height: 70px;}
+.question ul li h2{background: #f3f3f3;padding: 30px 24px;color: #000a1a;font-size: 24px;}
+.question ul li h2.h2-po{padding: 30px 24px 10px;border-top: 2px solid #ffffff;}
+.question ul li h2 span{font-size: 16px;display: block;color: #b5bcc4;}
+.question ul li h2 em{float:right;font-size: 16px;color: #b5bcc4;line-height: 16px;width: 70px;text-align: center;display: inline-block;margin-left: 2px;line-height: 26px;}
+.question ul li h2 span.bg{background: #f3f3f3;}
+.question ul li p span{background: #f3f3f3;color: #42475f;font-size: 24px;padding: 26px 24px;display: block;position: relative;}
+.question ul li p span em{font-size: 16px;display: block;padding: 2px}
+.question ul li p span input{font-size: 24px;display: inline-block;position: absolute;right: 30px;bottom: 27px;height: 64px;width: 308px;padding: 0 10px;border: 1px solid #e9e9e9;color: #42475f;}
+.question ul li p span textarea{font-size: 24px;display: block;width: 520px;margin: 10px auto;min-height: 280px;border: 1px solid #e9e9e9;color: #42475f;}
+.question ul li p span textarea.ly{font-size: 24px;display: inline-block;width: 314px;padding:10px;float: right;color: #42475f}
+.question ul li p span:nth-child(odd){background: #ffffff;}
+.question ul li p span.bg{background: #f3f3f3;border-top: 2px solid #ffffff;}
+.question ul li p span i{cursor: pointer;width: 34px;height: 34px;border-radius: 50%;border: 2px solid #ccc;display: inline-block;float: right;margin-top: 26px;}
+.question ul li p span strong{cursor: pointer;width: 34px;height: 34px;border-radius: 50%;border: 2px solid #ccc;display: inline-block;float: right;margin-top: 10px;margin-left: 18px;margin-right: 14px;}
+.question ul li p span b{cursor: pointer;width: 34px;height: 34px;border-radius: 50%;border: 2px solid #ccc;/*display: inline-block;*/float: right;margin-top: 10px;margin-left: 20px;color: #919da9;line-height: 36px;text-align: center;font-size: 28px;}
+.question ul li p span a.rect{width: 34px;height: 34px;border-radius: 18%;border: 2px solid #ccc;display: inline-block;float: right;margin-top: 10px;}
+.question ul li p span i.active{background: url(../img/abb-icon.png) -296px -412px no-repeat;}
+.question ul li p span a.active{background: url(../img/abb-icon.png) -296px -412px no-repeat;}
+.question ul li p span strong.active{background: url(../img/abb-icon.png) -296px -412px no-repeat;}
+.question ul li p span b.active{border-color: #ff6c00;color: #ff6c00}
+.question p.subTn{padding-top: 140px; background-color: #ffffff}
+p.subTn i{display: inline-block;font-size: 16px;}
+.question span.text {font-size: 16px;color: #919da9;display:block;text-align: center;padding: 22px;}
+.question span.back {cursor:pointer;font-size: 20px;color: #919da9;display:block;text-align: center;text-decoration: underline;padding: 22px;}
+.question .nextBtn{display: block;width: 540px;height: 80px;background: #ff6c00;line-height: 80px;text-align: center;margin: 0 auto;font-size: 24px;color: #ffffff;}
+/*更多信息*/
+
+.more-text{border-top: 2px solid #ff994f;padding: 30px;}
+.more-text h1{font-size: 26px;color: #ff6c00;line-height: 46px;font-weight: bold;}
+.more-text h2{font-size: 24px;color: #333333;padding: 36px 0px 16px;font-weight: bold;}
+.more-text p{font-size: 22px;padding-left: 2em;position: relative;}
+.more-text p:after{content: '';width: 6px;height: 6px;border-radius: 50%;background: #000000;left: 30px;top: 13px;position: absolute;z-index: 1}
+.more-text p a{font-size: 22px;color: #ff6c00;text-decoration: underline;}
+.more-text li img{width: 520px;margin: 20px auto 10px;display: block;}
+.more-sha{position: fixed;left: 0;top: 0;z-index:3;width: 100%;height: 100%;background: rgba(0,0,0,.9);display: none;}
+.more-big-img{width: 640px;height: 600px;z-index:4;text-align: center;display: none;position: fixed;left: 50%;top: 50%;margin-left: -320px;margin-top: -300px;}
+.more-big-img p{width: 640px;height: 600px;text-align: center;line-height: 600px;}
+.more-big-img p img{max-width:100%;max-height:100%;display: inline-block;vertical-align: middle;z-index: 4}
+/*互动游戏*/
+
+.inter-game{position:relative;padding-bottom: 40px; border-top: 2px solid #ff994f;background: url(../img/date-bg.png) 0 0 no-repeat;background-size: cover;}
+.inter-game .inter-con{padding: 30px 22px;}
+.inter-game .inter-con h2{color: #ff6c00;background: #08080a;font-size: 30px;padding: 24px 32px;z-index: 11111;position: relative;}
+.inter-game .inter-con h2 span{color: #666666;font-size: 20px;}
+.inter-game .inter-con h2 p{display: inline-block;padding-left: 30px;}
+.inter-game .inter-con h2 a{width: 50px;height: 50px;background: url(../img/abb-icon.png) -450px -100px no-repeat;display: inline-block;vertical-align: middle;float: right;}
+.inter-con .list{background: rgba(0,0,0,.6);padding-bottom: 30px;overflow: hidden;margin-top: -20px;z-index: 1;}
+.inter-con .list li{position: relative;width: 46px;height: 46px;float: left;display: inline-block;}
+.list li .center{diplay: inline-block;position: absolute;right: -7px;bottom:-7px;z-index:11;width: 12px;height: 12px;border: 1px solid #565657;border-radius: 50%;}
+.list li .center em{display: inline-block;position: absolute;background: #565657}
+.list li .center.active{background: #ff6c00;border: 1px solid #ff6c00;z-index: 1113}
+.list li .center.active em{background: #ff6c00;display: inline-block;position: absolute;}
+.list li .center em.line{width: 32px;height: 1px;}
+.list li .center em.vert{width: 1px;height: 32px;}
+.list li .center em.pos1{left: -33px;top: 6px;}
+.list li .center em.pos2{left: 13px;top: 6px;}
+.list li .center em.pos3{left: 6px;top: -33px;}
+.list li .center em.pos4{left: 6px;top: 13px;}
+.inter-game .inter-pic{padding: 0px 22px 30px}
+.inter-game .inter-pic h2{color: #ffffff;background: rgba(0,0,0,.8);font-size: 30px;padding: 24px 32px;text-align: center;}
+.inter-pic .pic li{width: 33.3%;display: inline-block;float: left;}
+.inter-pic .pic li a,i{display: block;}
+.inter-pic .pic li a i{display: block;width: 100%;height: 170px;background: url(../img/game-2.png) no-repeat;}
+.inter-pic .pic li a i.pos1{background-position:  -38px -120px;}
+.inter-pic .pic li a i.pos2{background-position:  -216px -120px;}
+.inter-pic .pic li a i.pos3{background-position:  -398px -120px;}
+.inter-pic .pic li a i.pos4{background-position:  -38px -290px;}
+.inter-pic .pic li a i.pos5{background-position:  -216px -290px;}
+.inter-pic .pic li a i.pos6{background-position:  -398px -290px;}
+.inter-pic .pic li a i.pos7{background-position:  -38px -646px;}
+.inter-pic .pic li a i.pos8{background-position:  -216px -646px;}
+.inter-pic .pic li a i.pos9{background-position:  -398px -646px;}
+.inter-pic .pic li a i.pos10{background-position:  -38px -814px;}
+.inter-pic .pic li a i.pos11{background-position:  -216px -814px;}
+.inter-pic .pic li a i.pos12{background-position:  -398px -814px;}
+
+.inter-pic .pic li a.active i{display: block;width: 100%;height: 170px;background: url(../img/game-1.png) no-repeat;}
+.inter-pic .pic li a.active i.pos1{background-position:  -37px -120px;}
+.inter-pic .pic li a.active i.pos2{background-position:  -215px -120px;}
+.inter-pic .pic li a.active i.pos3{background-position:  -397px -120px;}
+.inter-pic .pic li a.active i.pos4{background-position:  -37px -290px;}
+.inter-pic .pic li a.active i.pos5{background-position:  -215px -290px;}
+.inter-pic .pic li a.active i.pos6{background-position:  -397px -290px;}
+.inter-pic .pic li a.active i.pos7{background-position:  -37px -646px;}
+.inter-pic .pic li a.active i.pos8{background-position:  -215px -646px;}
+.inter-pic .pic li a.active i.pos9{background-position:  -397px -646px;}
+.inter-pic .pic li a.active i.pos10{background-position:  -37px -814px;}
+.inter-pic .pic li a.active i.pos11{background-position:  -215px -814px;}
+.inter-pic .pic li a.active i.pos12{background-position:  -397px -814px;}
+.swiper-container {position: relative; height: 390px; overflow: hidden; }
+.swiper-wrapper{position: relative; }
+
+.swiper-slide{display: inline; float: left; width: 100%;padding: 20px 0; background: rgba(0,0,0,.6);}
+.arrow-left {
+	display: block;
+	background: url(../img/abb-icon.png) -480px -430px no-repeat;
+	z-index: 1;
+	position: absolute;
+	width: 42px;
+	height: 60px;
+	left: 0px;
+	top: 44%;
+	margin-top: -42px;
+}
+.arrow-right {
+	background: url(../img/abb-icon.png) -462px -346px no-repeat;
+	z-index: 1;
+	position: absolute;
+	width: 42px;
+	height: 60px;
+	right: 0px;
+	top: 44%;
+	margin-top: -42px;
+}
+.pagination{position: absolute; left: 0; text-align: center; bottom: 10px; width: 100%; overflow: hidden; }
+.pagination span{display: inline-block; width: 34px; height: 2px; background: #565657;margin-left: 6px; }/*在IE7下面加一个透明的背景图片  否则不能支持点击*/
+.pagination span.swiper-active-switch{background: #ff6c00; }
+.game-bottom{padding: 0 22px;width: 552px;background: rgba(0,0,0,.6);margin: 0 auto;position: relative;}
+.game-bottom .gif-swiper-container {position: relative;overflow: hidden; width: 380px;height: 82px;cursor: pointer;}
+.game-bottom .gif-swiper-container p{overflow:hidden;font-size: 24px;color: #ffffff;text-align: center;height: 82px;line-height: 82px;width: 58%;display: inline-block;padding: 0 1%;}
+.game-bottom .gif-swiper-wrapper{position: relative; }
+.game-bottom .gif-swiper-slide{width: 100%;}
+.game-bottom a{display: inline-block;}
+.game-bottom .gif-swiper-wrapper span{color: #ff6c00;display: inline-block;line-height: 82px; text-align: center;font-size: 24px;width: 10%;padding: 0 4%;}
+.game-bottom i{background: #ff6c00;display: inline-block;color: #ffffff;width: 96px;height: 38px;text-align: center;line-height: 38px;border-radius: 4px;position: absolute;right: 86px;top: 23px;cursor: pointer;}
+.game-bottom em{width: 38px;height: 38px;background: url(../img/abb-icon.png) -400px -412px; display: inline-block;position: absolute;right: 26px;top: 23px;cursor: pointer;}
+.inter-game-sha{display: none;position: fixed;left: 0;top: 0;width: 100%;height: 100%;background: rgba(0,0,0,.8);overflow-y: scroll;z-index: 11112;}
+.inter-game-sha .close-Btn{position: absolute;right: 0;top: 0;width: 60px;height: 60px;background: url(../img/abb-icon.png) -340px -390px;}
+.inter-game-sha .text-warp{width: 90%;padding: 170px 5% 40px 5%;}
+.inter-game-sha h1{font-size: 36px;color: #fdac25;padding: 10px;text-align: center;margin-top: 20%;}
+.inter-game-sha h1 a{text-decoration: underline;color: #fdac25;display: inline-block;}
+.inter-game-sha a.queBtn{width: 360px;height: 84px;display: block;line-height: 84px;text-align: center;color: #ffffff;font-size: 30px;background-color: #ff6c00;margin: 260px auto 0;}
+.inter-game-sha .rect{width: 580px;margin: 30px auto;border: 1px solid #3d3b3c;border-radius: 4px;}
+.inter-game-sha .rect ul{width: 530px;margin: 30px auto;padding: 40px;}
+.inter-game-sha .rect ul li{width: 100%;}
+.inter-game-sha .rect ul li p{float: left;display: inline-block;width: 168px;padding-left:6px; }
+.inter-game-sha .rect ul li p i{display: inline-block;font-size: 24px;color:#fdac25;}
+.inter-game-sha .rect ul li p em{display: block;font-size: 24px;color: #ffffff;}
+.inter-game-sha h2{font-size: 30px;color: #fdac25;padding-bottom: 50px;}
+.inter-game-sha p,ol{font-size: 24px;color: #ffffff;line-height: 40px;}
+.inter-game-sha h3{font-size: 24px;color: #fdac25;padding-top: 44px;}
+.inter-game-sha em{font-size: 24px;color: #fdac25;}
+
+
+
+/*获得积分*/
+.body-bg{background: #000000;}
+.score-w{border-top: 1px solid #ff6c00;}
+.score-all{width: 488px;height: 500px;border-top: 2px solid #ff6c00;background: url(../img/score-bg.png) 0 -2px no-repeat;position: fixed;left: 50%;top: 50%;margin-left: -244px;margin-top: -250px;}
+.score-all i{display: inline-block;width: 88px;height: 96px;background: url(../img/lit-icon.png) no-repeat;position: absolute;left: 50%;top: 20%;margin-left: -44px;}
+.score-all i.pos1{background-position: 0px 0px;}
+.score-all i.pos2{background-position: -92px 0px;}
+.score-all i.pos3{background-position: 0px -100px;}
+.score-all span{display: block;font-size: 16px;color: #919da9;text-align: center;}
+.score-all h3{font-size: 30px;color: #333333;text-align: center;padding: 20px 20px 0px;margin-top: 190px;}
+.score-all h3 em{font-size: 40px;color: #ff6c00;margin: 0 10px;}
+.score-all a{display: block;font-size: 24px;color: #ff6c00;width: 240px;height: 70px;border: 1px solid #cfcfcf;margin: 50px auto;text-align: center;line-height: 70px;}
+
+/*技术内容列表*/
+.list-banner1{border-top: 2px solid #ff994f}
+.list-banner1 img{display: block;}
+.list-banner1::after{content: '';position:absolute;right: 46%;bottom: 0px;width: 0;height: 0;border-left: 30px solid transparent;border-right: 30px solid transparent;border-top: 30px solid transparent;border-bottom: 30px solid #ffffff;}
+.list-content p{font-size: 20px;color: #333333;line-height: 40px;}
+.list-content h1{font-size: 26px;color: #ff6c00;line-height: 46px;position: relative;text-indent: 1em;padding: 0px 0px 20px 1em;}
+.list-content h1:after{position: absolute;left: 0;top: 10px;width: 1px;height: 30px;content: '';background-color: #ff6c00;}
+.list-content h2{font-size: 24px;color: #000000;padding: 46px 22px 0;font-weight: bold;}
+.list-content span{font-size: 20px;color: #999999;padding: 18px 22px;display: inline-block;}
+.list-content .list-text{padding: 30px;box-shadow: 0px 8px 60px #ccc;}
+.list-content .list-rect{position: relative;border: 0px solid #333;width: 580px;margin: 60px auto;box-shadow: 1px 1px 20px 5px #ccc;}
+.list-content .list-rect ol{color: #333333;margin-left: 1em;position: relative;padding-bottom: 50px;padding-top: 10px;}
+
+.list-content .list-rect ol li{padding: 0 22px;position: relative;font-size: 20px;}
+.list-rect li:after{content:'';width: 1px;height: 100%;background-color: #ff6c00;position: absolute;left: 0;top: 0px;padding: 0;}
+.list-rect li:before{z-index: 11;content:'';width: 12px;height: 12px;border:1px solid #ff6c00;background:#ffffff;position: absolute;left: -6px;top: 12px;padding: 0;border-radius: 50%;}
+
+.list-content .list-rect .top{position: absolute;left: 40px;top: -20px;/*width: 124px;*/height: 40px;font-size: 26px;background: #ff6c00;line-height: 40px;text-align: center;color: #ffffff;padding: 2px 10px;}
+.list-content .list-rect p.text{font-size: 20px;color: #333333;padding: 0 22px 36px;line-height: 40px;}
+.list-content .list-rect p.text2{font-size: 20px;color: #333333;padding: 60px 22px 0px;line-height: 40px;}
+
+/*展览展示*/
+
+.show-banner{border-top:2px solid #ff6c00; }
+.show-con ol li{font-size: 20px;}
+
+/*清空缓存*/
+.fontCol{color: #000000;text-align: center;font-size: 32px;}
+.clear-ind-Btn{background-color: #ff6c00;padding: 40px;width: 300px;margin: 160px auto 0px;font-size: 46px;text-align: center;line-height: 80px;border-radius: 50%}
+.clear-ques-Btn{background-color: #ff6c00;padding: 40px;width: 300px;margin: 50px auto 0px;font-size: 46px;text-align: center;line-height: 80px;border-radius: 50%}
+.clear-has-Btn{background-color: #ff6c00;padding: 40px;width: 300px;margin: 50px auto 0px;font-size: 46px;text-align: center;line-height: 80px;border-radius: 50%}
+.fontCol a{display: block;color: #ffffff}
+.indexLocal{margin-top: 60px;}

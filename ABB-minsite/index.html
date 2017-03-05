@@ -1,0 +1,111 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="viewport" content="width=640,user-scalable=no,target-densitydpi=device-dpi"/>
+<meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<meta HTTP-EQUIV="Expires" CONTENT="-1">
+<title>2016 ABB电力世界</title>
+<meta http-equiv="Cache-Control" content="max-age=86400 public"/>
+<meta  WXKey="uwin" WXDesc="领先技术 — 智能解决方案，了解更多信息，请点击查看" WXTitle="2016 ABB电力世界"  WXImg="http://client.adtmr.com/client/20161022/img/abb-sha.jpg" WXLink="http://client.adtmr.com/client/20161022/index.html" id="wx_share">
+<link rel="stylesheet" href="css/basic.css">
+<script type="text/javascript" src="http://front.01event.com/cdn/js/jquery.min.js"></script>
+<script src="http://front.01event.com/cdn/js/jweixinShare.js"></script>
+<script>
+		var oauth_obj;
+		var openid = localStorage.getItem('openid');
+
+			if(!openid){
+			var oauth_data = getQueryString("oauth_data");
+			if(!oauth_data)
+			{
+			      var obj = {
+			                url:"http://client.adtmr.com/client/20161022/index.html",//http://client.adtmr.com/client/20161022/index.html
+			                key:"weige2016",
+			                userId:"1235"
+			    }
+			    location.href = "http://abb2016.adtmr.com/weixin/oauth?key=weige2016&data=" +JSON.stringify(obj);
+			}
+
+			oauth_data = decodeURIComponent(oauth_data);
+		    var rr = eval("(" + oauth_data + ")");
+		    console.log(rr)
+		    openid = rr.userInfo.openid;
+		    localStorage.setItem('openid',openid)
+		    
+		}
+
+		function getQueryString(name) {
+		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		    var r = window.location.search.substr(1).match(reg);
+		    if (r != null) return unescape(r[2]); return null;
+		}
+	</script>
+</head>
+<body class="index-bg">
+	<div class="wrap">
+		<div class="index-banner pub_pic"><img src="img/index-banner.jpg" alt=""></div>
+		<div class="index-list">
+			<ul class="clearfix">
+				<li>
+					<a href="intro.html">
+						<i class="pos1"></i>
+						<p>会议介绍</p>
+					</a>
+				</li>
+				<li>
+					<a href="date-plan.html">
+						<i class="pos2"></i>
+						<p>日程安排</p>
+					</a>
+				</li>
+				<li>
+					<a href="theme.html">
+						<i class="pos3"></i>
+						<p>主题论坛</p>
+					</a>
+				</li>
+				<li>
+					<a href="technology.html">
+						<i class="pos4"></i>
+						<p>技术讲座</p>
+					</a>
+				</li>
+				<li>
+					<a href="show.html">
+						<i class="pos5"></i>
+						<p>展览展示</p>
+					</a>
+				</li>
+				<li>
+					<a href="download.html">
+						<i class="pos6"></i>
+						<p>样本下载</p>
+					</a>
+				</li>
+				<li>
+					<a href="game.html">
+						<i class="pos7"></i>
+						<p>互动游戏</p>
+					</a>
+				</li>
+				<li>
+					<a href="question.html">
+						<i class="pos8"></i>
+						<p>问卷调查</p>
+					</a>
+				</li>
+				<li>
+					<a href="more.html">
+						<i class="pos9"></i>
+						<p>更多信息</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="viewport" content="width=640,user-scalable=no,target-densitydpi=device-dpi"/>
+<meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<meta HTTP-EQUIV="Expires" CONTENT="-1">
+<title>2016 ABB电力世界</title>
+<meta http-equiv="Cache-Control" content="max-age=86400 public"/>
+<meta  WXKey="uwin" WXDesc="领先技术 — 智能解决方案，了解更多信息，请点击查看" WXTitle="2016 ABB电力世界"  WXImg="http://client.adtmr.com/client/20161022/img/abb-sha.jpg" WXLink="http://client.adtmr.com/client/20161022/index.html" id="wx_share">
+<link rel="stylesheet" href="css/basic.css">
+</head>
+<body>
+	<div class="wrap">
+		<div id="header">
+			<a href="javascript:void(0)" class="backBtn"></a>
+			<h2><i class="pos8"></i>问卷调查</h2>
+			<a href="index.html" class="goIndex"></a>
+		</div>
+		<div class="question-sha">
+			<a href="javascript:void(0)" class="close-q-Btn"></a>
+			<div class="text-q-warp">
+				<h1>您已成功提交问卷<br>感谢您的参与!</h1>
+				<a href="javascript:void(0)" class="que-back-Btn">返  回</a>
+			</div>
+			<div class="text-q-warp">
+				<h2 class="fir">感谢您积极参与此次ABB电力世界活动，为了帮助我们在未来做得更好，敬请填写以下问卷。（共十一个问题）</h2>
+				<a href="javascript:void(0)" class="que-sure-Btn">确定答题</a>
+			</div>
+		</div>
+		<div class="question">
+			<ul id="quesLists"></ul>
+			<p class="subTn">
+				<span class="text">（当前第<i></i>题/共11题）</span>
+					<a href="javascript:void(0)" class="nextBtn">下一题</a>
+				<span class="back"></span>
+			</p>
+		</div>
+		<div class="question-alert-sha">
+			<div class="ques-alert">
+				<h3></h3>
+				<a href="javascript:void(0)" class="sureQuesBtn">确  定</a>
+			</div>
+		</div>	
+	</div>
+	<script type="text/javascript" src="http://front.01event.com/cdn/js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/question.js"></script>
+	<script src="http://front.01event.com/cdn/js/jweixinShare.js"></script>
+	<script>
+		$(function(){
+
+
+			$(".backBtn").click(function() {
+				history.go(-1);
+			});
+
+		});
+			
+			var openid = localStorage.getItem('openid');
+			//var openid = '123';
+			
+			if(!openid){
+				location.href = 'index.html';
+			}
+
+			/*点击关闭按钮*/
+			$(".question-sha,.close-q-Btn,a.que-sure-Btn").click(function(){
+				$(".question-sha").hide();
+			});
+
+			//关闭答题验证按钮
+			function questionFlex(data){
+				$(".ques-alert h3").html(data);
+				$(".question-alert-sha").show();
+			}
+
+			$(".question-alert-sha,.sureQuesBtn").click(function(){
+				$(".question-alert-sha").hide();
+			})
+
+			//判断是否已经答题  是否显示遮罩
+
+			var _hasQuestionId = localStorage.getItem('_myQues');
+			if(!!_hasQuestionId){
+				$(".question-sha").show();
+				$(".text-q-warp").hide();
+				$(".text-q-warp:eq(0)").show();
+				$(".que-back-Btn").click(function(){
+					history.go(-1);
+				})
+			}else{
+				$(".text-q-warp").hide();
+				$(".text-q-warp:eq(1)").show();
+			}
+		//请求题型成功之后 
+		function  initClickEvent(){
+
+			//单选排除第四题
+				$(".question p span[stype!='other']").click(function(){
+					$(this).siblings().find("i").removeClass("active");
+					$(this).find("i").addClass("active");
+					$(this).siblings().find("input").val('');
+				})
+
+			//第四题多选题
+
+			$(".question p span").click(function(){
+				if($(this).find("a.rect").hasClass('active')){
+					$(this).find("a.rect").removeClass('active')
+				}else{
+					$(this).find("a.rect").addClass('active');
+				}
+			})
+
+			//第七题
+			$(".question span input[qType!='no7']").focus(function(){
+				$(this).parent().siblings().find('i').removeClass('active');
+			})
+
+			//第九题满意度的评价
+			$(".question p strong").click(function(){
+				$(this).siblings().removeClass('active');
+				$(this).addClass('active');
+			});
+			//第八题12345进行排序，不能重复
+			for(var j=0;j<5;j++){
+				!function(j){
+					$('.question p b[quesIndex=j'+j+']').click(function(){
+						$(this).siblings().removeClass('active');
+						$('.question p b[quesIndex=j'+j+']').removeClass("active");
+						$(this).addClass('active');
+					
+					})
+				}(j)	
+			}
+
+			var num = 0;
+			var len = $("#quesLists li").length;
+			$(".subTn i").text(num+1);
+			$("#quesLists li").eq(0).show();
+			$(".nextBtn").click(function(){
+				var _questionId = localStorage.getItem('_myQues');
+				if(!!_questionId){
+					questionFlex('您已经答题，不能重复！');
+					return false;
+				}
+				//对各个题型的验证
+				if(!submitQues(num)){
+					return false;
+				}
+				num++;
+
+				$("#quesLists li").hide();
+				$("#quesLists li").eq(num).show();
+
+				if(num==len){
+					$("#quesLists li").eq(10).show();
+					$(".subTn i").text(num);
+					ajaxQuestions();
+				}else{
+					$(".subTn i").text(num+1);
+				}
+				if(num==len-1){
+					$(".nextBtn").text('提交');
+					
+				}
+				if(num!=0){
+					$(".subTn .back").html('返回上一题');
+				}
+			});
+
+			$(".subTn .back").click(function(){
+					num--;
+					$("#quesLists li").hide();
+					$("#quesLists li").eq(num).show();
+					$(".subTn i").text(num+1);
+					$(".nextBtn").text('下一题');
+					if(num==len-1){
+						$(".nextBtn").text('提交');
+					
+					}
+					if(num==0){
+						$(".subTn .back").html('');
+					}else{
+						$(".subTn .back").html('返回上一题');
+					}
+				})
+		}
+
+
+			/*提交AJAX*/
+
+			function ajaxQuestions(){
+
+				var liQues = $("#quesLists li");
+				var arrQues = [];
+				var Q1 = liQues.eq(0).find("i").hasClass("active");
+				var subjectidQ1 = liQues.eq(0).find('h2').attr("subjectid");
+				var optionidQ1;
+				var contentQ1;
+				if(Q1){
+					optionidQ1 = liQues.eq(0).find("i.active").attr("optionid");
+				}else{
+					optionidQ1 = liQues.eq(0).find("input").attr('optionid');
+					contentQ1 = liQues.eq(0).find("input").val();
+				}
+
+				arrQues.push({"subjectid":subjectidQ1,"optionid":optionidQ1,"content":contentQ1});
+
+
+				var Q2 = liQues.eq(1).find("i").hasClass("active");
+				var subjectidQ2 = liQues.eq(1).find('h2').attr("subjectid");
+				var optionidQ2;
+				var contentQ2; 
+				if(Q2){
+					optionidQ2 = liQues.eq(1).find("i.active").attr("optionid");
+				}else{
+					optionidQ2 = liQues.eq(1).find("input").attr('optionid');
+					contentQ2= liQues.eq(1).find("input").val();
+				}
+		
+				arrQues.push({"subjectid":subjectidQ2,"optionid":optionidQ2,"content":contentQ2});
+
+
+
+				var subjectidQ3 = liQues.eq(2).find('h2').attr("subjectid");
+				var contentQ31 = liQues.eq(2).find("input").val(); 
+				arrQues.push({"subjectid":subjectidQ3,"content":contentQ31});
+				var contentQ32 = liQues.eq(2).find("textarea").val();
+				arrQues.push({"subjectid":subjectidQ3,"content":contentQ32});
+
+
+				var subjectidQ4 = liQues.eq(3).find('h2').attr("subjectid");
+				var q4Len = liQues.eq(3).find("a.active");
+				for(var i=0;i<q4Len.length;i++){
+					var optionidQ4 = liQues.eq(3).find("a.active").eq(i).attr("optionid");
+					arrQues.push({"subjectid":subjectidQ4,"optionid":optionidQ4});
+				}
+
+
+				var Q5 = liQues.eq(4).find("i").hasClass("active");
+				var subjectidQ5 = liQues.eq(4).find('h2').attr("subjectid");
+				var optionidQ5= liQues.eq(4).find("i.active").attr("optionid");
+				arrQues.push({"subjectid":subjectidQ5,"optionid":optionidQ5});
+
+
+
+					//新加的第六题
+
+				var subjectidQ6 = liQues.eq(5).find('h2').attr("subjectid");
+				var q6Len = liQues.eq(5).find("a.active");
+				for(var i=0;i<q6Len.length;i++){
+					var optionidQ6 = liQues.eq(5).find("a.active").eq(i).attr("optionid");
+					arrQues.push({"subjectid":subjectidQ6,"optionid":optionidQ6});
+				}
+
+
+				var subjectidQ7 = liQues.eq(6).find('h2').attr("subjectid");
+				var contentQ7 = liQues.eq(6).find("textarea").val();
+				arrQues.push({"subjectid":subjectidQ7,"content":contentQ7});
+
+
+
+				var Q8 = liQues.eq(7).find("i").hasClass("active");
+				var subjectidQ8 = liQues.eq(7).find('h2').attr("subjectid");
+				var optionidQ8= liQues.eq(7).find("i.active").attr("optionid");
+				arrQues.push({"subjectid":subjectidQ8,"optionid":optionidQ8});
+
+
+				var subjectidQ9 = liQues.eq(8).find('h2').attr("subjectid");
+				for(var i=0;i<liQues.eq(8).find('p').find("span").length;i++){
+					var optionidQ9 = liQues.eq(8).find('p').find("span").eq(i).attr("optionid");
+					var contentQ9 = liQues.eq(8).find('p').find("span").eq(i).find('b.active').html();
+					arrQues.push({"subjectid":subjectidQ9,"optionid":optionidQ9,"content":contentQ9});
+				}
+
+
+
+				var subjectidQ10 = liQues.eq(9).find('h2').eq(0).attr("subjectid");
+				for(var i=0;i<liQues.eq(9).find("strong.active").length;i++){
+					var optionidQ10 = liQues.eq(9).find("strong.active").eq(i).attr("optionid");
+					arrQues.push({"subjectid":subjectidQ10,"optionid":optionidQ10});
+				}
+
+
+				var subjectidQ11 = liQues.eq(10).find('h2').attr("subjectid");
+				var contentQ11 = liQues.eq(10).find("textarea").val();
+				arrQues.push({"subjectid":subjectidQ11,"content":contentQ11});
+
+
+				$.ajax({
+			    	url: "http://abb2016.adtmr.com/question/answer",
+			    	type:"post",
+			    	data: {
+            			json : JSON.stringify(arrQues),
+            			user: openid,
+            			projectid: 16101401
+        			},
+			    	dataType:"jsonp",
+			    	success: function(data){
+			    		if(data.state != "0"){
+			    			questionFlex(data.message);
+			    			return false;
+			    		}else{
+						//本地缓存，禁止二次答题
+			    			localStorage.setItem('_myQues', 'hasDone');
+			    			questionFlex('提交问卷成功，即将跳转到互动游戏界面！');
+			    			setTimeout(goMyGame,4000);
+			    			$(".question-alert-sha,.sureQuesBtn").click(function(){
+								goMyGame();
+							})
+			    		}
+			    	},
+			    	error : function(){
+			    		questionFlex('系统繁忙，请稍后再试！')
+			    	}
+				});
+			}
+
+
+
+			function goMyGame(){
+				location.href = 'game.html';
+			}
+	</script>
+</body>
+</html>
